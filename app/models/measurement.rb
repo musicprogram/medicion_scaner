@@ -11,7 +11,6 @@ class Measurement < ApplicationRecord
     validates :edad, presence: true
     validates :ciudad_nacimiento, presence: true
     validates :ciudad_actual, presence: true
-    validates :practica_deporte, presence: true
     validates :deporte, presence: true
     validates :estatura_cm, presence: true
     validates :peso_kg, presence: true
