@@ -1,0 +1,460 @@
+<%= form_for(measurement) do |f| %>
+  <% if measurement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(measurement.errors.count, "error") %> Falto un dato por agregar:</h2>
+
+      <ul>
+      <% measurement.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="field">
+        <%= f.label :fecha  %>
+        <%= f.date_field :fecha , class: 'form-control' , required:true%>
+      </div>
+      </div>
+      <div class="col-md-3">
+        
+        <div class="field">
+    <%= f.label :documento, 'Documento de identidad *' %>
+    <%= f.number_field :documento , class: 'form-control' , required:true%>
+  </div>
+      </div>
+      <div class="col-md-3">
+        
+         <div class="field">
+    <%= f.label :nombre_apellido, 'Nombres y apellidos *' %>
+    <%= f.text_field :nombre_apellido , class: 'form-control' , required:true%>
+  </div>
+      </div>
+      <div class="col-md-3">
+          <div class="field">
+    <%= f.label :correo, 'Correo electrónico *' %>
+    <%= f.email_field :correo , class: 'form-control' , required:true%>
+  </div>
+        
+      </div>
+    </div>
+  </div>
+  
+  
+  <br>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3">
+         <div class="field">
+    <%= f.label :telefono , 'Número telefónico *' %>
+    <%= f.number_field :telefono , class: 'form-control' , required:true%>
+  </div>
+        
+      </div>
+      <div class="col-md-3">
+        
+        
+  <div class="field">
+    <%= f.label :ficha, 'Ficha *' %>
+    <%= f.text_field :ficha , class: 'form-control' , required:true%>
+  </div>
+      </div>
+      <div class="col-md-3">
+          <div class="field">
+    <%= f.label :programa_id, 'Programa *' %>
+    <%= f.collection_select :programa_id, Programa.all, :id, :nombre, {prompt: "Seleccion Programa"},{class: "form-control"} %>
+
+  </div>
+        
+      </div>
+      <div class="col-md-3">
+        
+  <label class="radio-inline">
+      Masculino: <%= f.radio_button(:genero, true, class: 'form-control') %>
+    </label>
+    <label class="radio-inline">
+       Femenino: <%= f.radio_button(:genero, false, class: 'form-control') %>
+    </label>
+
+  
+      </div>
+    </div>
+  </div>
+  
+  
+  <br>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3">
+          <div class="field">
+    <%= f.label :edad , 'Edad *'%>
+    <%= f.number_field :edad , class: 'form-control' , required:true%>
+  </div>
+        
+      </div>
+      <div class="col-md-3">
+          <div class="field">
+    <%= f.label :ciudad_nacimiento, 'Ciudad de nacimiento *' %>
+    <%= f.text_field :ciudad_nacimiento , class: 'form-control' , required:true%>
+  </div>
+        
+      </div>
+      <div class="col-md-3">
+          <div class="field">
+    <%= f.label :ciudad_actual, 'Ciudad actual *' %>
+    <%= f.text_field :ciudad_actual , class: 'form-control' , required:true%>
+  </div>
+        
+      </div>
+      <div class="col-md-3">
+          <div class="field">
+    
+    <label class="radio-inline">
+    Tiene hijos (solo mujeres) *
+    </label>
+     <label class="radio-inline">
+      Si: <%= f.radio_button(:tiene_hijos, true, class: 'form-control') %>
+    </label>
+    <label class="radio-inline">
+       No: <%= f.radio_button(:tiene_hijos, false, class: 'form-control') %>
+    </label>
+
+    
+    
+  </div>
+        
+      </div>
+    </div>
+  </div>
+  
+  
+  
+<br>
+  
+    <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3">
+        
+        <div class="field">
+    <%= f.label :numero_hijos, 'Número de hijos --solo mujeres-- *' %>
+    <%= f.number_field :numero_hijos , class: 'form-control'%>
+  </div>
+      </div>
+      <div class="col-md-3">
+        
+          
+  
+  
+  <label class="radio-inline">
+    Practica algún deporte *
+    </label>
+     <label class="radio-inline">
+      Si: <%= f.radio_button(:practica_deporte, true, class: 'form-control') %>
+    </label>
+    <label class="radio-inline">
+       No: <%= f.radio_button(:practica_deporte, false, class: 'form-control') %>
+    </label>
+  
+  
+  
+
+      </div>
+      <div class="col-md-3">
+          <div class="field">
+    <%= f.label :deporte, '¿Cuál deporte? *' %>
+    <%= f.text_field :deporte , class: 'form-control' , required:true%>
+  </div>
+
+        
+      </div>
+      <div class="col-md-3">
+        
+
+  <div class="field">
+    <%= f.label :estatura_cm, 'Estatura en cm *' %>
+    <%= f.text_field :estatura_cm , class: 'form-control' , required:true%>
+  </div>
+
+        
+      </div>
+    </div>
+  </div>
+  
+  <br>
+  
+  
+      <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3">
+        
+
+  <div class="field">
+    <%= f.label :peso_kg , 'Peso en Kg *'%>
+    <%= f.text_field :peso_kg , class: 'form-control' , required:true%>
+  </div>
+        
+      </div>
+      <div class="col-md-3">
+        
+      
+
+  <div class="field">
+    <%= f.label :contorno_cuello, 'Contorno de cuello medio (Mid-Neck Girth) *' %>
+    <%= f.text_field :contorno_cuello , class: 'form-control' , required:true%>
+  </div>  
+      </div>
+      <div class="col-md-3">
+     
+
+
+  <div class="field">
+    <%= f.label :contorno_busto, 'Contorno de busto o pecho (Chest Bust Girth) *' %>
+    <%= f.text_field :contorno_busto , class: 'form-control' , required:true%>
+  </div>   
+        
+      </div>
+      <div class="col-md-3">
+        
+
+  <div class="field">
+    <%= f.label :contorno_submamario, 'Contorno Submamario (Under-Bust Girth) *' %>
+    <%= f.text_field :contorno_submamario , class: 'form-control' , required:true%>
+  </div>
+
+        
+      </div>
+    </div>
+  </div>
+  
+  
+  <br>
+  
+  
+      <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3">
+        
+  <div class="field">
+    <%= f.label :contorno_cintura, 'Contorno de cintura (Waist Girth) *' %>
+    <%= f.text_field :contorno_cintura , class: 'form-control' , required:true%>
+  </div>
+        
+      </div>
+      <div class="col-md-3">
+        
+        
+
+  <div class="field">
+    <%= f.label :contorno_cad_alta, 'Contorno de cadera alta (High-Hip Girth) *' %>
+    <%= f.text_field :contorno_cad_alta , class: 'form-control' , required:true%>
+  </div>
+      </div>
+      <div class="col-md-3">
+        
+        
+
+  <div class="field">
+    <%= f.label :contorno_cadera, 'Contorno de cadera / asiento (Hip Seat Girth) *' %>
+    <%= f.text_field :contorno_cadera , class: 'form-control' , required:true%>
+  </div>
+      </div>
+      <div class="col-md-3">
+        
+        
+  <div class="field">
+    <%= f.label :contorno_muslo, 'Contorno de muslo (Thigh Girth) *' %>
+    <%= f.text_field :contorno_muslo , class: 'form-control' , required:true%>
+  </div>
+
+      </div>
+    </div>
+  </div>
+  
+  
+  <br>
+  
+      <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3">
+        
+        
+
+  <div class="field">
+    <%= f.label :contorno_muslo_med , 'Contorno de muslo medio (Mid-Thigh Girth) *'%>
+    <%= f.text_field :contorno_muslo_med , class: 'form-control' , required:true%>
+  </div>
+
+      </div>
+      <div class="col-md-3">
+        
+  
+  <div class="field">
+    <%= f.label :contorno_rodilla, 'Contorno de rodilla (knee Girth) *  ' %>
+    <%= f.text_field :contorno_rodilla , class: 'form-control' , required:true%>
+  </div>
+        
+      </div>
+      <div class="col-md-3">
+        
+       
+  <div class="field">
+    <%= f.label :contorno_pantorrilla, 'Contorno de pantorrilla (Call Girth) *' %>
+    <%= f.text_field :contorno_pantorrilla , class: 'form-control' , required:true%>
+  </div>
+ 
+      </div>
+      <div class="col-md-3">
+        
+
+
+
+  <div class="field">
+    <%= f.label :contorno_tobillo , 'Contorno de tobillo (Ankle Girth) *' %>
+    <%= f.text_field :contorno_tobillo , class: 'form-control' , required:true%>
+  </div>
+        
+      </div>
+    </div>
+  </div>
+  <br>
+  
+   <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3">
+        
+
+  <div class="field">
+    <%= f.label :largo_brazo, 'Largo de brazo (Arm Length) *' %>
+    <%= f.text_field :largo_brazo , class: 'form-control' , required:true%>
+  </div>
+
+        
+      </div>
+      <div class="col-md-3">
+        
+        
+
+  <div class="field">
+    <%= f.label :tiro_completo, 'Tiro completo (Crotch Length) *' %>
+    <%= f.text_field :tiro_completo , class: 'form-control' , required:true%>
+  </div>
+      </div>
+      <div class="col-md-3">
+        
+  <div class="field">
+    <%= f.label :ancho_espalda_hom_hom, 'Ancho de espalda de hombro a hombro (Across Back Shoulder Width) *' %>
+    <%= f.text_field :ancho_espalda_hom_hom , class: 'form-control' , required:true%>
+  </div>
+
+        
+      </div>
+      <div class="col-md-3">
+        
+        
+
+  <div class="field">
+    <%= f.label :ancho_frente_hom_hom, 'Ancho frente de hombro a hombro (Across Front Shoulder Width) *' %>
+    <%= f.text_field :ancho_frente_hom_hom , class: 'form-control' , required:true%>
+  </div>
+      </div>
+    </div>
+  </div>
+  
+  <br>
+   <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3">
+        
+        
+
+  <div class="field">
+    <%= f.label :lar_centr_espal_cervi_cintu , 'Largo centro espalda -Cervical a cintura- (Center Back Waist Length) *'%>
+    <%= f.text_field :lar_centr_espal_cervi_cintu , class: 'form-control' , required:true%>
+  </div>
+      </div>
+      <div class="col-md-3">
+        
+        
+
+  <div class="field">
+    <%= f.label :lar_frente_cervi_cintu, 'Largo centro frente -Entre clavículas a cintura- (Center Back Waist Length) *' %>
+    <%= f.text_field :lar_frente_cervi_cintu , class: 'form-control' , required:true%>
+  </div>
+      </div>
+      <div class="col-md-3">
+        
+
+  <div class="field">
+    <%= f.label :altu_cintu_piso, 'Altura de la cintura -cintura a piso- (Waist Heigh' %>
+    <%= f.text_field :altu_cintu_piso , class: 'form-control' , required:true%>
+  </div>
+        
+      </div>
+      <div class="col-md-3">
+        
+
+  <div class="field">
+    <%= f.label :altu_entre_piso , 'Altura de la entrepierna -entrepierna a piso- (crotch Height) *' %>
+    <%= f.text_field :altu_entre_piso , class: 'form-control' , required:true%>
+  </div>
+
+        
+      </div>
+    </div>
+  </div>
+  
+  
+<br>
+  
+     <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3">
+        
+        
+  <div class="field">
+    <%= f.label :contorno_completo_hom , 'Contorno completo de hombro a hombro -bandeja- (shoulder Girth) *' %>
+    <%= f.text_field :contorno_completo_hom , class: 'form-control' , required:true%>
+  </div>
+
+      </div>
+      <div class="col-md-3">
+        <div class="field">
+    <%= f.label :contorno_completo_bice, 'Contorno completo de bíceps a bíceps -sobre brazos- (shoulder Girth) *' %>
+    <%= f.text_field :contorno_completo_bice , class: 'form-control' , required:true%>
+  </div>
+        
+      </div>
+      <div class="col-md-3">
+        
+  <div class="field">
+    <%= f.label :contorno_muneca, 'Contorno de muñeca (wrist Girth) *' %>
+    <%= f.text_field :contorno_muneca , class: 'form-control' , required:true%>
+  </div>
+        
+      </div>
+      <div class="col-md-3">
+        
+  <div class="field">
+    <%= f.label :contorno_bice , 'Contorno de Bíceps (Upper Arm Girth) *' %>
+    <%= f.text_field :contorno_bice , class: 'form-control' , required:true%>
+  </div>
+        
+      </div>
+    </div>
+  </div>
+  
+  
+  
+
+  <br>
+
+
+
+  <div class="container">
+    <%= f.submit 'enviar', class: 'form-control btn btn-success' %>
+  </div>
+<% end %>

@@ -1,0 +1,207 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @measurement.fecha %>
+</p>
+
+<p>
+  <strong>Documento:</strong>
+  <%= @measurement.documento %>
+</p>
+
+<p>
+  <strong>Nombre apellido:</strong>
+  <%= @measurement.nombre_apellido %>
+</p>
+
+<p>
+  <strong>Correo:</strong>
+  <%= @measurement.correo %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @measurement.telefono %>
+</p>
+
+<p>
+  <strong>Ficha:</strong>
+  <%= @measurement.ficha %>
+</p>
+
+<p>
+  <strong>Programa:</strong>
+  <%= @measurement.programa %>
+</p>
+
+<p>
+  <strong>Genero:</strong>
+  
+  <%= mostrar_genero(@measurement.genero) %>
+
+</p>
+
+<p>
+  <strong>Edad:</strong>
+  <%= @measurement.edad %>
+</p>
+
+<p>
+  <strong>Ciudad nacimiento:</strong>
+  <%= @measurement.ciudad_nacimiento %>
+</p>
+
+<p>
+  <strong>Ciudad actual:</strong>
+  <%= @measurement.ciudad_actual %>
+</p>
+
+<p>
+  <strong>Tiene hijos:</strong>
+  <%= @measurement.tiene_hijos %>
+</p>
+
+<p>
+  <strong>Numero hijos:</strong>
+
+  <%= mostrar_nino(@measurement.numero_hijos) %>
+</p>
+
+<p>
+  <strong>Practica deporte:</strong>
+  <%= @measurement.practica_deporte %>
+</p>
+
+<p>
+  <strong>Deporte:</strong>
+  <%= mostrar_deporte(@measurement.deporte) %>
+</p>
+
+<p>
+  <strong>Estatura cm:</strong>
+  <%= @measurement.estatura_cm %>
+</p>
+
+<p>
+  <strong>Peso kg:</strong>
+  <%= @measurement.peso_kg %>
+</p>
+
+<p>
+  <strong>Contorno cuello:</strong>
+  <%= @measurement.contorno_cuello %>
+</p>
+
+<p>
+  <strong>Contorno busto:</strong>
+  <%= @measurement.contorno_busto %>
+</p>
+
+<p>
+  <strong>Contorno submamario:</strong>
+  <%= @measurement.contorno_submamario %>
+</p>
+
+<p>
+  <strong>Contorno cintura:</strong>
+  <%= @measurement.contorno_cintura %>
+</p>
+
+<p>
+  <strong>Contorno cad alta:</strong>
+  <%= @measurement.contorno_cad_alta %>
+</p>
+
+<p>
+  <strong>Contorno cadera:</strong>
+  <%= @measurement.contorno_cadera %>
+</p>
+
+<p>
+  <strong>Contorno muslo:</strong>
+  <%= @measurement.contorno_muslo %>
+</p>
+
+<p>
+  <strong>Contorno muslo med:</strong>
+  <%= @measurement.contorno_muslo_med %>
+</p>
+
+<p>
+  <strong>Contorno rodilla:</strong>
+  <%= @measurement.contorno_rodilla %>
+</p>
+
+<p>
+  <strong>Contorno pantorrilla:</strong>
+  <%= @measurement.contorno_pantorrilla %>
+</p>
+
+<p>
+  <strong>Contorno tobillo:</strong>
+  <%= @measurement.contorno_tobillo %>
+</p>
+
+<p>
+  <strong>Largo brazo:</strong>
+  <%= @measurement.largo_brazo %>
+</p>
+
+<p>
+  <strong>Tiro completo:</strong>
+  <%= @measurement.tiro_completo %>
+</p>
+
+<p>
+  <strong>Ancho espalda hom hom:</strong>
+  <%= @measurement.ancho_espalda_hom_hom %>
+</p>
+
+<p>
+  <strong>Ancho frente hom hom:</strong>
+  <%= @measurement.ancho_frente_hom_hom %>
+</p>
+
+<p>
+  <strong>Lar centr espal cervi cintu:</strong>
+  <%= @measurement.lar_centr_espal_cervi_cintu %>
+</p>
+
+<p>
+  <strong>Lar frente cervi cintu:</strong>
+  <%= @measurement.lar_frente_cervi_cintu %>
+</p>
+
+<p>
+  <strong>Altu cintu piso:</strong>
+  <%= @measurement.altu_cintu_piso %>
+</p>
+
+<p>
+  <strong>Altu entre piso:</strong>
+  <%= @measurement.altu_entre_piso %>
+</p>
+
+<p>
+  <strong>Contorno completo hom:</strong>
+  <%= @measurement.contorno_completo_hom %>
+</p>
+
+<p>
+  <strong>Contorno completo bice:</strong>
+  <%= @measurement.contorno_completo_bice %>
+</p>
+
+<p>
+  <strong>Contorno muneca:</strong>
+  <%= @measurement.contorno_muneca %>
+</p>
+
+<p>
+  <strong>Contorno bice:</strong>
+  <%= @measurement.contorno_bice %>
+</p>
+
+<%= link_to 'Edit', edit_measurement_path(@measurement) %> |
+<%= link_to 'Back', measurements_path %>
